@@ -25,4 +25,5 @@ RSpec.describe Alimentos::Alimento do
            expect(@alimento1).to have_attributes(:nombre=>"Carne de Vaca")
 	       expect(@alimento2).to have_attributes(:nombre=>"Carne de Cordero")     
          end
+    end
 end
