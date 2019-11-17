@@ -1,5 +1,5 @@
 require 'spec_helper'
-require  'benchmark'
+
     RSpec.describe Alimentos::Nodo do
         before :all do
             @mi_nodo = Alimentos::Nodo.new(2,nil,nil)
