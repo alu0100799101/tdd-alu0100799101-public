@@ -24,6 +24,9 @@ require 'spec_helper'
 		            expect(@mi_lista).to have_attributes(:cabeza=>nil)
 		            expect(@mi_lista).to have_attributes(:cola=>nil)
 		        end
+			it "La lista esta vacia" do
+			    expect(@mi_lista.empty?).to eq(true)
+               		end
 
 		end
 
