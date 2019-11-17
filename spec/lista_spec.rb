@@ -13,3 +13,20 @@ require 'spec_helper'
             end
         end
     end 
+	 RSpec.describe Gema::Lista do
+		before :each do
+		        @mi_lista = Gema::Lista.new()
+
+		 end
+
+		 describe "#Atributos de la lista" do
+		        it "La lista tiene cabeza y cola" do
+		            expect(@mi_lista).to have_attributes(:cabeza=>nil)
+		            expect(@mi_lista).to have_attributes(:cola=>nil)
+		        end
+
+		end
+
+
+	end
+
