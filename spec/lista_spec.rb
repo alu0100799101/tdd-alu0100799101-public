@@ -13,9 +13,9 @@ require 'spec_helper'
             end
         end
     end 
-	 RSpec.describe Gema::Lista do
+	 RSpec.describe Alimentos::Lista do
 		before :each do
-		        @mi_lista = Gema::Lista.new()
+		        @mi_lista = Alimentos::Lista.new()
 
 		 end
 
