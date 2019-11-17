@@ -12,6 +12,13 @@ module Alimentos
             @cola = nil
         end
 
+	 def empty?
+	      if @cabeza == nil
+	       return true
+	      else 
+		return false
+	      end
+	 end
 
   end
 end
