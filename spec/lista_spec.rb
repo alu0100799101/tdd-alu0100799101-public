@@ -29,6 +29,16 @@ require 'spec_helper'
                		end
 
 		end
+		describe "#Funcionalidad de la lista" do
+			it "Se puede insertar un elemento al principio y final de la lista" do
+		            expect(@mi_lista).to respond_to (:push_back)
+		            @mi_lista.push_back(1003)
+		            expect(@mi_lista.back).to eq(1003)
+		            expect(@mi_lista).to respond_to (:push_front)
+		            @mi_lista.push_front('Pepe')
+		            expect(@mi_lista.front).to eq('Pepe')
+			end
+                end
 
 
 	end
