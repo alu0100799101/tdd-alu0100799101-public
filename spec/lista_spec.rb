@@ -1,4 +1,4 @@
-equire 'spec_helper'
+require 'spec_helper'
 require  'benchmark'
     RSpec.describe Alimentos::Nodo do
         before :all do
