@@ -16,6 +16,13 @@ require 'spec_helper'
 	 RSpec.describe Alimentos::Lista do
 		before :each do
 		        @mi_lista = Alimentos::Lista.new()
+			@alimento1 = Alimentos::Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
+			@alimento2 = Alimentos::Alimento.new("Carne de Cordero",18.0,0.0,17.0,20.0,185.0)
+			@alimento3 = Alimentos::Alimento.new("Camarones",17.6,1.5,0.6,18.0,2.0)
+			@alimento4 = Alimentos::Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+			@alimento5 = Alimentos::Alimento.new("Salmón",19.9,0.0,13.6,6.0,3.7)
+			@alimento6 = Alimentos::Alimento.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
+			
 
 		 end
 
@@ -52,6 +59,24 @@ require 'spec_helper'
 			end
                 end
 
+		describe "#Lista de alimentos" do
+		        it 'La lista opera correctamente con los nombres de la etiqueta' do
+		            @mi_lista.push_back(@alimento1)
+		            @mi_lista.push_back(@alimento6)
+		            @mi_lista.push_front(@alimento4)
+		            @mi_lista.push_front(@alimento3)
+		            @mi_lista.push_back(@alimento2)
+		            @mi_lista.push_back(@alimento5)
+		            expect(@mi_lista.n_nodos).to eq(6)
+		            expect(@mi_lista.pop_back.nombre).to eq("Inventad")
+		            expect(@mi_lista.pop_back.nombre).to eq("Arroz")
+		            expect(@mi_lista.pop_back.nombre).to eq("Inventa")
+		            expect(@mi_lista.pop_back.nombre).to eq("Zumo")
+		            expect(@mi_lista.pop_back.nombre).to eq("Inventada")
+		            expect(@mi_lista.pop_back.nombre).to eq("Mermelada")
+		            expect(@mi_lista.n_nodos).to eq(0)
+		        end
+		end
 
 	end
 
