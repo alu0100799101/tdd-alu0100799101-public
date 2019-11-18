@@ -68,7 +68,7 @@ require 'spec_helper'
 		            @mi_lista.push_back(@alimento2)
 		            @mi_lista.push_back(@alimento5)
 		            expect(@mi_lista.n_nodos).to eq(6)
-		            expect(@mi_lista.pop_back.nombre).to eq("Inventad")
+		            expect(@mi_lista.pop_back.nombre).to eq("Salmon")
 		            expect(@mi_lista.pop_back.nombre).to eq("Arroz")
 		            expect(@mi_lista.pop_back.nombre).to eq("Inventa")
 		            expect(@mi_lista.pop_back.nombre).to eq("Zumo")
