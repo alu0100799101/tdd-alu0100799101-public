@@ -68,12 +68,12 @@ require 'spec_helper'
 		            @mi_lista.push_back(@alimento2)
 		            @mi_lista.push_back(@alimento5)
 		            expect(@mi_lista.n_nodos).to eq(6)
-		            expect(@mi_lista.pop_back.nombre).to eq("Salmon")
-		            expect(@mi_lista.pop_back.nombre).to eq("Arroz")
-		            expect(@mi_lista.pop_back.nombre).to eq("Inventa")
-		            expect(@mi_lista.pop_back.nombre).to eq("Zumo")
-		            expect(@mi_lista.pop_back.nombre).to eq("Inventada")
-		            expect(@mi_lista.pop_back.nombre).to eq("Mermelada")
+		            expect(@mi_lista.pop_back.nombre).to eq("Salmón")
+		            expect(@mi_lista.pop_back.nombre).to eq("Carne de Cordero")
+		            expect(@mi_lista.pop_back.nombre).to eq("Cerdo")
+		            expect(@mi_lista.pop_back.nombre).to eq("Carne de Vaca")
+		            expect(@mi_lista.pop_back.nombre).to eq("Chocolate")
+		            expect(@mi_lista.pop_back.nombre).to eq("Camarones")
 		            expect(@mi_lista.n_nodos).to eq(0)
 		        end
 		end
