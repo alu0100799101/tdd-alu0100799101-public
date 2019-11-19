@@ -16,6 +16,7 @@ require 'spec_helper'
 	 RSpec.describe Alimentos::Lista do
 		before :each do
 		        @mi_lista = Alimentos::Lista.new()
+			@vasca = Alimentos::Lista.new()
 			@alimento1 = Alimentos::Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 			@alimento2 = Alimentos::Alimento.new("Carne de Cordero",18.0,0.0,17.0,20.0,185.0)
 			@alimento3 = Alimentos::Alimento.new("Camarones",17.6,1.5,0.6,18.0,2.0)
@@ -74,6 +75,20 @@ require 'spec_helper'
 		            expect(@mi_lista.pop_back.nombre).to eq("Carne de Vaca")
 		            expect(@mi_lista.pop_back.nombre).to eq("Chocolate")
 		            expect(@mi_lista.pop_back.nombre).to eq("Camarones")
+		            expect(@mi_lista.n_nodos).to eq(0)
+		        end
+		end
+	
+		describe "#Lista de alimentos" do
+		        it 'Porcentaje para una dieta Vasca' do
+		            @vasca.push_back(@alimento1)
+		            @vasca.push_back(@alimento6)
+		            @vasca.push_front(@alimento4)
+		            @vasca.push_front(@alimento3)
+		            @vasca.push_back(@alimento2)
+		            @vasca.push_back(@alimento5)
+		            expect(@vasca.n_nodos).to eq(6)
+		            expect(((@vasca.pop_back.kcalproteinas)+(@vasca.pop_back.kcalproteinas)+(@vasca.pop_back.kcalproteinas)+(@vasca.pop_back.kcalproteinas)+(@vasca.pop_back.kcalproteinas)+(@vasca.pop_back.kcalproteinas))*0.2).to eq(82.72000000000001)
 		            expect(@mi_lista.n_nodos).to eq(0)
 		        end
 		end
