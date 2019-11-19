@@ -80,7 +80,7 @@ require 'spec_helper'
 		end
 	
 		describe "Lista Para la dieta Vasca" do
-		        it 'Porcentaje para una dieta Vasca proteinas' do
+		        it 'Eficiencia energetica para una dieta Vasca proteinas' do
 		            @vasca.push_back(@alimento1)
 		            @vasca.push_back(@alimento6)
 		            @vasca.push_front(@alimento4)
@@ -89,11 +89,10 @@ require 'spec_helper'
 		            @vasca.push_back(@alimento5)
 		            expect(@vasca.n_nodos).to eq(6)
 		            expect(((@vasca.pop_back.kcalproteinas)+(@vasca.pop_back.kcalproteinas)+(@vasca.pop_back.kcalproteinas)+(@vasca.pop_back.kcalproteinas)+(@vasca.pop_back.kcalproteinas)+(@vasca.pop_back.kcalproteinas))*0.15).to eq(62.04)
-			    expect(((@vasca.pop_back.kcallipidos)+(@vasca.pop_back.kcallipidos)+(@vasca.pop_back.kcallipidos)+(@vasca.pop_back.kcallipidos)+(@vasca.pop_back.kcallipidos)+(@vasca.pop_back.kcallipidos))*0.25).to eq(0)
 			    expect(@mi_lista.n_nodos).to eq(0)
 		        end
 
-			it 'Porcentaje para una dieta Vasca proteinas' do
+			it 'Eficiencia energetica para una dieta Vasca lipidos' do
 		            @vasca.push_back(@alimento1)
 		            @vasca.push_back(@alimento6)
 		            @vasca.push_front(@alimento4)
@@ -104,6 +103,31 @@ require 'spec_helper'
 		expect(((@vasca.pop_back.kcallipidos)+(@vasca.pop_back.kcallipidos)+(@vasca.pop_back.kcallipidos)+(@vasca.pop_back.kcallipidos)+(@vasca.pop_back.kcallipidos)+(@vasca.pop_back.kcallipidos))*0.25).to eq(158.85)
 			expect(@mi_lista.n_nodos).to eq(0)
 			end
+			it 'Eficiencia energetica para una dieta Vasca carbohidratos' do
+		            @vasca.push_back(@alimento1)
+		            @vasca.push_back(@alimento6)
+		            @vasca.push_front(@alimento4)
+		            @vasca.push_front(@alimento3)
+		            @vasca.push_back(@alimento2)
+		            @vasca.push_back(@alimento5)
+		            expect(@vasca.n_nodos).to eq(6)
+		expect(((@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos))*0.60).to eq(116.39999999999999)
+			expect(@mi_lista.n_nodos).to eq(0)
+			end
+			it 'Gei de la dieta Vasca diaria ' do
+			    @vasca.push_back(@alimento1)
+		            @vasca.push_back(@alimento6)
+		            @vasca.push_front(@alimento4)
+		            @vasca.push_front(@alimento3)
+		            @vasca.push_back(@alimento2)
+		            @vasca.push_back(@alimento5)
+		            expect(@vasca.n_nodos).to eq(6)
+	
+
+			
+			
+			
+			
 		end
 
 	end
