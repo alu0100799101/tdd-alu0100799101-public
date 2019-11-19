@@ -171,7 +171,7 @@ require 'spec_helper'
 		            expect(((@vegetariana.pop_back.kcalproteinas)+(@vegetariana.pop_back.kcalproteinas)+(@vegetariana.pop_back.kcalproteinas))*0.2).to eq(19.44)
 			    expect(@vegetariana.n_nodos).to eq(0)
 			end
-			it 'Eficiencia energetica para una dieta Vegetariana proteinas' do
+			it 'Eficiencia energetica para una dieta Vegetariana lipidos/grasas' do
 		            @vegetariana.push_back(@alimento10)#leche
 		            @vegetariana.push_back(@alimento11)#huevo
 		            @vegetariana.push_back(@alimento13)
@@ -180,7 +180,7 @@ require 'spec_helper'
 		            expect(((@vegetariana.pop_back.kcallipidos)+(@vegetariana.pop_back.kcallipidos)+(@vegetariana.pop_back.kcallipidos))*0.4).to eq(68.4)
 			    expect(@vegetariana.n_nodos).to eq(0)
 			end
-			it 'Eficiencia energetica para una dieta Vegetariana proteinas' do
+			it 'Eficiencia energetica para una dieta Vegetariana carbohidratos' do
 		            @vegetariana.push_back(@alimento10)#leche
 		            @vegetariana.push_back(@alimento11)#huevo
 		            @vegetariana.push_back(@alimento13)
@@ -189,6 +189,26 @@ require 'spec_helper'
 		            expect(((@vegetariana.pop_back.kcalglucidos)+(@vegetariana.pop_back.kcalglucidos)+(@vegetariana.pop_back.kcalglucidos))*0.4).to eq(12.48)
 			    expect(@vegetariana.n_nodos).to eq(0)
 			end
+			it 'Gei diario para la dieta Vegetariana' do
+		            @vegetariana.push_back(@alimento10)#leche
+		            @vegetariana.push_back(@alimento11)#huevo
+		            @vegetariana.push_back(@alimento13)
+		            
+		            expect(@vegetariana.n_nodos).to eq(3)
+		            expect((@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)).to eq(9.4)
+			    expect(@vegetariana.n_nodos).to eq(0)
+			end
+			it 'Gei anual para la dieta Vegetariana' do
+		            @vegetariana.push_back(@alimento10)#leche
+		            @vegetariana.push_back(@alimento11)#huevo
+		            @vegetariana.push_back(@alimento13)
+		            
+		            expect(@vegetariana.n_nodos).to eq(3)
+		            expect((@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)*365).to eq(9.4)
+			    expect(@vegetariana.n_nodos).to eq(0)
+			end
+			
+
 		end
 		
 
