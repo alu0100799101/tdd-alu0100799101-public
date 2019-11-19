@@ -230,6 +230,15 @@ require 'spec_helper'
 		            expect(((@vegetariana.pop_back.kcalproteinas)+(@vegetariana.pop_back.kcalproteinas)+(@vegetariana.pop_back.kcalproteinas))*0.33).to eq(37.092000000000006)
 			    expect(@vegetariana.n_nodos).to eq(0)
 			end
+			it 'Eficiencia energetica para una dieta vegetaria lipidos/grasas' do
+		            @vegetariana.push_back(@alimento12)#leche
+		            @vegetariana.push_back(@alimento13)#huevo
+		            @vegetariana.push_back(@alimento15)
+		            
+		            expect(@vegetariana.n_nodos).to eq(3)
+		            expect(((@vegetariana.pop_back.kcallipidos)+(@vegetariana.pop_back.kcallipidos)+(@vegetariana.pop_back.kcallipidos))*0.33).to eq(174.63600000000002)
+			    expect(@vegetariana.n_nodos).to eq(0)
+			end
 		
 		end
 	end
