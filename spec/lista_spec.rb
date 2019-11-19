@@ -110,8 +110,8 @@ require 'spec_helper'
 		            @vasca.push_front(@alimento3)
 		            @vasca.push_back(@alimento2)
 		            @vasca.push_back(@alimento5)
-		            expect(@vasca.n_nodos).to eq(6)
-		expect(((@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos))*0.60).to eq(116.39999999999999)
+			    expect(@vasca.n_nodos).to eq(6)
+			    expect(((@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos)+(@vasca.pop_back.kcalglucidos))*0.60).to eq(116.39999999999999)
 			expect(@mi_lista.n_nodos).to eq(0)
 			end
 			it 'Gei de la dieta Vasca diaria ' do
@@ -122,6 +122,11 @@ require 'spec_helper'
 		            @vasca.push_back(@alimento2)
 		            @vasca.push_back(@alimento5)
 		            expect(@vasca.n_nodos).to eq(6)
+			    expect((@vasca.pop_back.gei)+(@vasca.pop_back.gei)+(@vasca.pop_back.gei)+(@vasca.pop_back.gei)+(@vasca.pop_back.gei)+(@vasca.pop_back.gei)).to eq(103.89999999999999)
+			    expect(@vasca.n_nodos).to eq(0)
+
+			end
+			
 	
 
 			
