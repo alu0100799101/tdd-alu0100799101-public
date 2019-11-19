@@ -204,7 +204,16 @@ require 'spec_helper'
 		            @vegetariana.push_back(@alimento13)
 		            
 		            expect(@vegetariana.n_nodos).to eq(3)
-		            expect((@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)*365).to eq(9.4)
+		            expect((@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)*365).to eq(1174.2)
+			    expect(@vegetariana.n_nodos).to eq(0)
+			end
+			it 'Uso Terreno para la dieta Vegetariana' do
+		            @vegetariana.push_back(@alimento10)#leche
+		            @vegetariana.push_back(@alimento11)#huevo
+		            @vegetariana.push_back(@alimento13)
+		            
+		            expect(@vegetariana.n_nodos).to eq(3)
+		            expect((@vegetariana.pop_back.terreno)+(@vegetariana.pop_back.terreno)+(@vegetariana.pop_back.terreno)).to eq(16.8)
 			    expect(@vegetariana.n_nodos).to eq(0)
 			end
 			
