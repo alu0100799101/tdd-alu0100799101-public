@@ -126,6 +126,20 @@ require 'spec_helper'
 			    expect(@vasca.n_nodos).to eq(0)
 
 			end
+			it 'Gei de la dieta Vasca Anual ' do
+			    @vasca.push_back(@alimento1)
+		            @vasca.push_back(@alimento6)
+		            @vasca.push_front(@alimento4)
+		            @vasca.push_front(@alimento3)
+		            @vasca.push_back(@alimento2)
+		            @vasca.push_back(@alimento5)
+		            expect(@vasca.n_nodos).to eq(6)
+			    expect(((@vasca.pop_back.gei)+(@vasca.pop_back.gei)+(@vasca.pop_back.gei)+(@vasca.pop_back.gei)+(@vasca.pop_back.gei)+		(@vasca.pop_back.gei))*365).to eq(37923.5)
+			    expect(@vasca.n_nodos).to eq(0)
+
+			end
+			
+	
 			
 	
 
