@@ -17,6 +17,7 @@ require 'spec_helper'
 		before :each do
 		        @mi_lista = Alimentos::Lista.new()
 			@vasca = Alimentos::Lista.new()
+			@vegetaria = Alimentos::Lista.new()
 			@vegetariana = Alimentos::Lista.new()
 			@alimento1 = Alimentos::Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 			@alimento2 = Alimentos::Alimento.new("Carne de Cordero",18.0,0.0,17.0,20.0,185.0)
@@ -162,64 +163,74 @@ require 'spec_helper'
 			end
 		end
 		describe ' Lista dieta vegetaria' do 
-			it 'Eficiencia energetica para una dieta Vegetariana proteinas' do
-		            @vegetariana.push_back(@alimento10)#leche
-		            @vegetariana.push_back(@alimento11)#huevo
-		            @vegetariana.push_back(@alimento13)
+			it 'Eficiencia energetica para una dieta vegetaria proteinas' do
+		            @vegetaria.push_back(@alimento10)#leche
+		            @vegetaria.push_back(@alimento11)#huevo
+		            @vegetaria.push_back(@alimento13)
 		            
-		            expect(@vegetariana.n_nodos).to eq(3)
-		            expect(((@vegetariana.pop_back.kcalproteinas)+(@vegetariana.pop_back.kcalproteinas)+(@vegetariana.pop_back.kcalproteinas))*0.2).to eq(19.44)
-			    expect(@vegetariana.n_nodos).to eq(0)
+		            expect(@vegetaria.n_nodos).to eq(3)
+		            expect(((@vegetaria.pop_back.kcalproteinas)+(@vegetaria.pop_back.kcalproteinas)+(@vegetaria.pop_back.kcalproteinas))*0.2).to eq(19.44)
+			    expect(@vegetaria.n_nodos).to eq(0)
 			end
-			it 'Eficiencia energetica para una dieta Vegetariana lipidos/grasas' do
-		            @vegetariana.push_back(@alimento10)#leche
-		            @vegetariana.push_back(@alimento11)#huevo
-		            @vegetariana.push_back(@alimento13)
+			it 'Eficiencia energetica para una dieta vegetaria lipidos/grasas' do
+		            @vegetaria.push_back(@alimento10)#leche
+		            @vegetaria.push_back(@alimento11)#huevo
+		            @vegetaria.push_back(@alimento13)
 		            
-		            expect(@vegetariana.n_nodos).to eq(3)
-		            expect(((@vegetariana.pop_back.kcallipidos)+(@vegetariana.pop_back.kcallipidos)+(@vegetariana.pop_back.kcallipidos))*0.4).to eq(68.4)
-			    expect(@vegetariana.n_nodos).to eq(0)
+		            expect(@vegetaria.n_nodos).to eq(3)
+		            expect(((@vegetaria.pop_back.kcallipidos)+(@vegetaria.pop_back.kcallipidos)+(@vegetaria.pop_back.kcallipidos))*0.4).to eq(68.4)
+			    expect(@vegetaria.n_nodos).to eq(0)
 			end
-			it 'Eficiencia energetica para una dieta Vegetariana carbohidratos' do
-		            @vegetariana.push_back(@alimento10)#leche
-		            @vegetariana.push_back(@alimento11)#huevo
-		            @vegetariana.push_back(@alimento13)
+			it 'Eficiencia energetica para una dieta vegetaria carbohidratos' do
+		            @vegetaria.push_back(@alimento10)#leche
+		            @vegetaria.push_back(@alimento11)#huevo
+		            @vegetaria.push_back(@alimento13)
 		            
-		            expect(@vegetariana.n_nodos).to eq(3)
-		            expect(((@vegetariana.pop_back.kcalglucidos)+(@vegetariana.pop_back.kcalglucidos)+(@vegetariana.pop_back.kcalglucidos))*0.4).to eq(12.48)
-			    expect(@vegetariana.n_nodos).to eq(0)
+		            expect(@vegetaria.n_nodos).to eq(3)
+		            expect(((@vegetaria.pop_back.kcalglucidos)+(@vegetaria.pop_back.kcalglucidos)+(@vegetaria.pop_back.kcalglucidos))*0.4).to eq(12.48)
+			    expect(@vegetaria.n_nodos).to eq(0)
 			end
-			it 'Gei diario para la dieta Vegetariana' do
-		            @vegetariana.push_back(@alimento10)#leche
-		            @vegetariana.push_back(@alimento11)#huevo
-		            @vegetariana.push_back(@alimento13)
+			it 'Gei diario para la dieta vegetaria' do
+		            @vegetaria.push_back(@alimento10)#leche
+		            @vegetaria.push_back(@alimento11)#huevo
+		            @vegetaria.push_back(@alimento13)
 		            
-		            expect(@vegetariana.n_nodos).to eq(3)
-		            expect((@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)).to eq(9.4)
-			    expect(@vegetariana.n_nodos).to eq(0)
+		            expect(@vegetaria.n_nodos).to eq(3)
+		            expect((@vegetaria.pop_back.gei)+(@vegetaria.pop_back.gei)+(@vegetaria.pop_back.gei)).to eq(9.4)
+			    expect(@vegetaria.n_nodos).to eq(0)
 			end
-			it 'Gei anual para la dieta Vegetariana' do
-		            @vegetariana.push_back(@alimento10)#leche
-		            @vegetariana.push_back(@alimento11)#huevo
-		            @vegetariana.push_back(@alimento13)
+			it 'Gei anual para la dieta vegetaria' do
+		            @vegetaria.push_back(@alimento10)#leche
+		            @vegetaria.push_back(@alimento11)#huevo
+		            @vegetaria.push_back(@alimento13)
 		            
-		            expect(@vegetariana.n_nodos).to eq(3)
-		            expect((@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)*365).to eq(1174.2)
-			    expect(@vegetariana.n_nodos).to eq(0)
+		            expect(@vegetaria.n_nodos).to eq(3)
+		            expect((@vegetaria.pop_back.gei)+(@vegetaria.pop_back.gei)+(@vegetaria.pop_back.gei)*365).to eq(1174.2)
+			    expect(@vegetaria.n_nodos).to eq(0)
 			end
-			it 'Uso Terreno para la dieta Vegetariana' do
-		            @vegetariana.push_back(@alimento10)#leche
-		            @vegetariana.push_back(@alimento11)#huevo
-		            @vegetariana.push_back(@alimento13)
+			it 'Uso Terreno para la dieta vegetaria' do
+		            @vegetaria.push_back(@alimento10)#leche
+		            @vegetaria.push_back(@alimento11)#huevo
+		            @vegetaria.push_back(@alimento13)
 		            
-		            expect(@vegetariana.n_nodos).to eq(3)
-		            expect((@vegetariana.pop_back.terreno)+(@vegetariana.pop_back.terreno)+(@vegetariana.pop_back.terreno)).to eq(16.8)
-			    expect(@vegetariana.n_nodos).to eq(0)
+		            expect(@vegetaria.n_nodos).to eq(3)
+		            expect((@vegetaria.pop_back.terreno)+(@vegetaria.pop_back.terreno)+(@vegetaria.pop_back.terreno)).to eq(16.8)
+			    expect(@vegetaria.n_nodos).to eq(0)
 			end
 			
 
 		end
+		describe ' Lista dieta vegetariana' do 
+			it 'Eficiencia energetica para una dieta vegetaria proteinas' do
+		            @vegetariana.push_back(@alimento12)
+		            @vegetariana.push_back(@alimento13)
+		            @vegetariana.push_back(@alimento15)
+		            
+		            expect(@vegetariana.n_nodos).to eq(3)
+		            expect(((@vegetariana.pop_back.kcalproteinas)+(@vegetariana.pop_back.kcalproteinas)+(@vegetariana.pop_back.kcalproteinas))*0.33).to eq(37.092000000000006)
+			    expect(@vegetariana.n_nodos).to eq(0)
+			end
 		
-
+		end
 	end
 
