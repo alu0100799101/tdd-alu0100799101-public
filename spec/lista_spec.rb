@@ -16,6 +16,7 @@ require 'spec_helper'
 	 RSpec.describe Alimentos::Lista do
 		before :each do
 		        @mi_lista = Alimentos::Lista.new()
+			@espanola = Alimentos::Lista.new()
 			@vasca = Alimentos::Lista.new()
 			@vegetaria = Alimentos::Lista.new()
 			@vegetariana = Alimentos::Lista.new()
@@ -90,6 +91,38 @@ require 'spec_helper'
 		            expect(@mi_lista.n_nodos).to eq(0)
 		        end
 		end
+	
+		describe ' Lista dieta española' do 
+			it 'Eficiencia energetica para una dieta española proteinas' do
+		            @espanola.push_back(@alimento1)
+		            @espanola.push_back(@alimento3)
+		            @espanola.push_back(@alimento7)
+		            
+		            expect(@espanola.n_nodos).to eq(3)
+		            expect(((@espanola.pop_back.kcalproteinas)+(@espanola.pop_back.kcalproteinas)+(@espanola.pop_back.kcalproteinas))*0.2).to eq(47.440000000000005)
+			    expect(@espanola.n_nodos).to eq(0)
+			end
+			it 'Eficiencia energetica para una dieta espanola lipidos/grasas' do
+		            @espanola.push_back(@alimento1)#leche
+		            @espanola.push_back(@alimento3)#huevo
+		            @espanola.push_back(@alimento7)
+		            
+		            expect(@espanola.n_nodos).to eq(3)
+		            expect(((@espanola.pop_back.kcallipidos)+(@espanola.pop_back.kcallipidos)+(@espanola.pop_back.kcallipidos))*0.4).to eq(33.480000000000004)
+			    expect(@espanola.n_nodos).to eq(0)
+			end
+			it 'Eficiencia energetica para una dieta espanola carbohidratos' do
+		            @espanola.push_back(@alimento1)
+		            @espanola.push_back(@alimento3)
+		            @espanola.push_back(@alimento7)
+		            
+		            expect(@espanola.n_nodos).to eq(3)
+		            expect(((@espanola.pop_back.kcalglucidos)+(@espanola.pop_back.kcalglucidos)+(@espanola.pop_back.kcalglucidos))*0.4).to eq(2.4000000000000004)
+			    expect(@espanola.n_nodos).to eq(0)
+			end
+		end
+
+		
 	
 		describe "Lista Para la dieta Vasca" do
 		        it 'Eficiencia energetica para una dieta Vasca proteinas' do
@@ -298,7 +331,7 @@ require 'spec_helper'
 		            expect(((@carne.pop_back.kcallipidos)+(@carne.pop_back.kcallipidos)+(@carne.pop_back.lipidos))*0.5).to eq(106.39999999999999)
 			    expect(@carne.n_nodos).to eq(0)
 			end
-			it 'Gei diario para una dieta vegetaria ' do
+			it 'Gei diario para una dieta locos por la carne ' do
 		            @carne.push_back(@alimento1)
 		            @carne.push_back(@alimento2)
 		            @carne.push_back(@alimento6)
@@ -308,7 +341,7 @@ require 'spec_helper'
 			    expect(@carne.n_nodos).to eq(0)
 			end
 		
-			it 'Gei anual para una dieta vegetaria ' do
+			it 'Gei anual para una dieta locos por la carne ' do
 		            @carne.push_back(@alimento1)
 		            @carne.push_back(@alimento2)
 		            @carne.push_back(@alimento6)
@@ -318,7 +351,7 @@ require 'spec_helper'
 			    expect(@carne.n_nodos).to eq(0)
 			end
 			
-			it 'Uso de Terreno  para una dieta vegetaria ' do
+			it 'Uso de Terreno  para una dieta locos por la carne' do
 		            @carne.push_back(@alimento1)
 		            @carne.push_back(@alimento2)
 		            @carne.push_back(@alimento6)
