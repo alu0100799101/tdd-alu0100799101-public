@@ -298,6 +298,37 @@ require 'spec_helper'
 		            expect(((@carne.pop_back.kcallipidos)+(@carne.pop_back.kcallipidos)+(@carne.pop_back.lipidos))*0.5).to eq(106.39999999999999)
 			    expect(@carne.n_nodos).to eq(0)
 			end
+			it 'Gei diario para una dieta vegetaria ' do
+		            @carne.push_back(@alimento1)
+		            @carne.push_back(@alimento2)
+		            @carne.push_back(@alimento6)
+		            
+		            expect(@carne.n_nodos).to eq(3)
+		            expect(((@carne.pop_back.gei)+(@carne.pop_back.gei)+(@carne.pop_back.gei)).round(2)).to eq(77.6)
+			    expect(@carne.n_nodos).to eq(0)
+			end
+		
+			it 'Gei anual para una dieta vegetaria ' do
+		            @carne.push_back(@alimento1)
+		            @carne.push_back(@alimento2)
+		            @carne.push_back(@alimento6)
+		            
+		            expect(@carne.n_nodos).to eq(3)
+		            expect(((@carne.pop_back.gei)+(@carne.pop_back.gei)+(@carne.pop_back.gei))*365).to eq(28323.999999999996)
+			    expect(@carne.n_nodos).to eq(0)
+			end
+			
+			it 'Uso de Terreno  para una dieta vegetaria ' do
+		            @carne.push_back(@alimento1)
+		            @carne.push_back(@alimento2)
+		            @carne.push_back(@alimento6)
+		            
+		            expect(@carne.n_nodos).to eq(3)
+		            expect(((@carne.pop_back.terreno)+(@carne.pop_back.terreno)+(@carne.pop_back.terreno)).round(2)).to eq(360.0
+     
+)
+			    expect(@carne.n_nodos).to eq(0)
+			end
 
 
 
