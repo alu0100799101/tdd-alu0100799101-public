@@ -257,6 +257,16 @@ require 'spec_helper'
 		            expect((@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)).to eq(2.6999999999999997)
 			    expect(@vegetariana.n_nodos).to eq(0)
 			end
+		
+			it 'Gei anual para una dieta vegetaria ' do
+		            @vegetariana.push_back(@alimento12)
+		            @vegetariana.push_back(@alimento13)
+		            @vegetariana.push_back(@alimento15)
+		            
+		            expect(@vegetariana.n_nodos).to eq(3)
+		            expect(((@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei)+(@vegetariana.pop_back.gei))*365).to eq(985.4999999999999)
+			    expect(@vegetariana.n_nodos).to eq(0)
+			end
 		end
 	end
 
