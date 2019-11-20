@@ -120,6 +120,15 @@ require 'spec_helper'
 		            expect(((@espanola.pop_back.kcalglucidos)+(@espanola.pop_back.kcalglucidos)+(@espanola.pop_back.kcalglucidos))*0.4).to eq(2.4000000000000004)
 			    expect(@espanola.n_nodos).to eq(0)
 			end
+			it 'Gei diario para una dieta espanola ' do
+		            @espanola.push_back(@alimento1)
+		            @espanola.push_back(@alimento3)
+		            @espanola.push_back(@alimento7)
+		            
+		            expect(@espanola.n_nodos).to eq(3)
+		            expect((@espanola.pop_back.gei)+(@espanola.pop_back.gei)+(@espanola.pop_back.gei)).to eq(73.7)
+			    expect(@espanola.n_nodos).to eq(0)
+			end
 		end
 
 		
