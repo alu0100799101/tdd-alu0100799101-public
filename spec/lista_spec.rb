@@ -289,6 +289,15 @@ require 'spec_helper'
 		            expect(((@carne.pop_back.kcalproteinas)+(@carne.pop_back.kcalproteinas)+(@carne.pop_back.kcalproteinas))*0.5).to eq(121.2)
 			    expect(@carne.n_nodos).to eq(0)
 			end
+			it 'Eficiencia energetica para una dieta locos por la carne proteinas' do
+		            @carne.push_back(@alimento1)
+		            @carne.push_back(@alimento2)
+		            @carne.push_back(@alimento6)
+		            
+		            expect(@carne.n_nodos).to eq(3)
+		            expect(((@carne.pop_back.kcallipidos)+(@carne.pop_back.kcallipidos)+(@carne.pop_back.lipidos))*0.5).to eq(106.39999999999999)
+			    expect(@carne.n_nodos).to eq(0)
+			end
 
 
 
