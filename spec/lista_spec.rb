@@ -19,6 +19,7 @@ require 'spec_helper'
 			@vasca = Alimentos::Lista.new()
 			@vegetaria = Alimentos::Lista.new()
 			@vegetariana = Alimentos::Lista.new()
+			@carne = Alimentos::Lista.new()
 			@alimento1 = Alimentos::Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 			@alimento2 = Alimentos::Alimento.new("Carne de Cordero",18.0,0.0,17.0,20.0,185.0)
 			@alimento3 = Alimentos::Alimento.new("Camarones",17.6,1.5,0.6,18.0,2.0)
@@ -277,6 +278,25 @@ require 'spec_helper'
 		            expect(((@vegetariana.pop_back.terreno)+(@vegetariana.pop_back.terreno)+(@vegetariana.pop_back.terreno)).round(2)).to eq(10.40)
 			    expect(@vegetariana.n_nodos).to eq(0)
 			end
+		end
+		describe 'Lista dieta Locos por la carne ' do
+			it 'Eficiencia energetica para una dieta locos por la carne proteinas' do
+		            @carne.push_back(@alimento1)
+		            @carne.push_back(@alimento2)
+		            @carne.push_back(@alimento6)
+		            
+		            expect(@carne.n_nodos).to eq(3)
+		            expect(((@carne.pop_back.kcalproteinas)+(@carne.pop_back.kcalproteinas)+(@carne.pop_back.kcalproteinas))*0.5).to eq(121.2)
+			    expect(@carne.n_nodos).to eq(0)
+			end
+
+
+
+
+
+
+
+
 		end
 	end
 
