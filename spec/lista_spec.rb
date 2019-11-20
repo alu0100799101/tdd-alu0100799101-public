@@ -129,6 +129,24 @@ require 'spec_helper'
 		            expect((@espanola.pop_back.gei)+(@espanola.pop_back.gei)+(@espanola.pop_back.gei)).to eq(73.7)
 			    expect(@espanola.n_nodos).to eq(0)
 			end
+			it 'Gei anual para una dieta espanola ' do
+		            @espanola.push_back(@alimento1)
+		            @espanola.push_back(@alimento3)
+		            @espanola.push_back(@alimento7)
+		            
+		            expect(@espanola.n_nodos).to eq(3)
+		            expect(((@espanola.pop_back.gei)+(@espanola.pop_back.gei)+(@espanola.pop_back.gei))*365).to eq(26900.5)
+			    expect(@espanola.n_nodos).to eq(0)
+			end
+			it 'Uso de terreno  para una dieta espanola ' do
+		            @espanola.push_back(@alimento1)
+		            @espanola.push_back(@alimento3)
+		            @espanola.push_back(@alimento7)
+		            
+		            expect(@espanola.n_nodos).to eq(3)
+		            expect((@espanola.pop_back.terreno)+(@espanola.pop_back.terreno)+(@espanola.pop_back.terreno)).to eq(173.1)
+			    expect(@espanola.n_nodos).to eq(0)
+			end
 		end
 
 		
