@@ -419,11 +419,14 @@ require 'spec_helper'
 			end
 			
 		 	it "Prueba con collect donde obtenemos que indivuos de la lista tienen kcalproteinas >= 60 " do
-                        expect(@mi_lista_alimento.collect{|i| i.kcalproteinas >= 60}).to eq([true,false,true,true,true])
+                        	expect(@mi_lista_alimento.collect{|i| i.kcalproteinas >= 60}).to eq([true,false,true,true,true])
                     	end		
 			#Selecciona de la lista de la cabeza a la cola y lo guarda en un vector con los valores que cumplan con lo que se selecciona.
-                    	 it "Prueba select donde obtendremos los valores que sean >= 60 imc , obteniendo solo los verdaderos"do
-                        expect(@mi_lista_alimento.select{|num| num.kcalproteinas >= 60}).to eq([@alimento5,@alimento3,@alimento2,@alimento1])
+                    	it "Prueba select donde obtendremos los valores que sean >= 60 imc , obteniendo solo los verdaderos"do
+                        	expect(@mi_lista_alimento.select{|num| num.kcalproteinas >= 60}).to eq([@alimento5,@alimento3,@alimento2,@alimento1])
+                    	end
+			it "Prueba sort para ordenar los alimentos de menor a mayor"do
+                        expect(@mi_lista_alimento.sort).to eq([@alimento4,@alimento5,@alimento3,@alimento2,@alimento1])
                     	end
 
 
