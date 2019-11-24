@@ -3,6 +3,7 @@ module Alimentos
 	Nodo = Struct.new(:valor, :siguiente, :previo)
 
  class Lista
+	include Enumerable
        
         attr_reader :n_nodos, :cabeza, :cola
         
