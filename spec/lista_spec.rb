@@ -416,9 +416,11 @@ require 'spec_helper'
 				expect(@mi_lista_alimento.max).to eq(@alimento1)
 				expect(@mi_lista_alimento.min).to eq(@alimento4)
 
-
-
-			end		
+			end
+			
+		 	it "Prueba con collect donde obtenemos que indivuos de la lista tienen kcalproteinas >= 60 " do
+                        expect(@mi_lista_alimento.collect{|i| i.kcalproteinas >= 60}).to eq([true,false,true,true,true])
+                    	end		
 
 
 
