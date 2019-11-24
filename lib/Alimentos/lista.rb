@@ -3,8 +3,7 @@ module Alimentos
 	Nodo = Struct.new(:valor, :siguiente, :previo)
 
  	class Lista
-
-		 include Enumerable
+		include Enumerable
 	       
 		attr_reader :n_nodos, :cabeza, :cola
 		
@@ -93,17 +92,18 @@ module Alimentos
 				valor_aux
 			    end
 		end
+	
 			
 		def each(&block)
 		     	node_aux = Nodo.new(nil,nil,nil)
 		       	node_aux = @cabeza
 	    
 		    while !(node_aux.nil?)
-		       yield node_aux.valor
+		       	yield node_aux.valor
 	    
 		         node_aux = node_aux.siguiente
 		    end
 		end 
 
- 	 end
+ 	end
 end
