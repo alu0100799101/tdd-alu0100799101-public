@@ -109,7 +109,8 @@ RSpec.describe Alimentos::Alimento do
 
 
 	end
-
+	
+	#Practica 8 Comparacion de alimentos 
 	describe "Pruebas para Comparar alimentos " do
 		it "Se comparan correctamente las etiques"do
 		        expect(@alimento1 > @alimento2).to eq(true)

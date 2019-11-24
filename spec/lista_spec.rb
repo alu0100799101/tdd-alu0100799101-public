@@ -391,9 +391,29 @@ require 'spec_helper'
 			end
 
 
+		end
+		#Practica 8 Enumerable lista 
+		describe 'Pruebas para enumerar lista ' do
+			@mi_lista_alimento = Alimentos::Lista.new()
+                        @alimento1 = Alimentos::Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
+	                @alimento2 = Alimentos::Alimento.new("Carne de Cordero",18.0,0.0,17.0,20.0,185.0)
+	                @alimento3 = Alimentos::Alimento.new("Camarones",17.6,1.5,0.6,18.0,2.0)
+	                @alimento4 = Alimentos::Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+	                @alimento5 = Alimentos::Alimento.new("Salmón",19.9,0.0,13.6,6.0,3.7)
+                        @mi_lista_alimento.push_front(@alimento1)
+                        @mi_lista_alimento.push_front(@alimento2)   
+                        @mi_lista_alimento.push_front(@alimento3)  
+                        @mi_lista_alimento.push_front(@alimento4)   
+                        @mi_lista_alimento.push_front(@alimento5)
+
+			it ' Prueba max y min  para la lista ' do 
+			
+				expect(@mi_lista_alimento.max).to eq(@alimento4)
+				expect(@mi_lista_alimento.min).to eq(@alimento3)
 
 
 
+			end		
 
 
 
