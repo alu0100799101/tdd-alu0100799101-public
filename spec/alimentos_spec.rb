@@ -109,4 +109,17 @@ RSpec.describe Alimentos::Alimento do
 
 
 	end
+
+	describe "Pruebas para Comparar alimentos " do
+		it "Se comparan correctamente las etiques"do
+		        expect(@alimento1 > @alimento2).to eq(true)
+		        expect(@alimento1 < @alimento2).to eq(false)
+		        expect(@alimento1 == @alimento2).to eq(false)
+		         expect(@alimento3 > @alimento4).to eq(false)
+		        expect(@alimento3 < @alimento4).to eq(true)
+		        expect(@alimento3 == @alimento4).to eq(false)
+           	 end
+
+
+	end
 end
