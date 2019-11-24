@@ -394,7 +394,7 @@ require 'spec_helper'
 		end
 		#Practica 8 Enumerable lista 
 		describe 'Pruebas para enumerar lista ' do
-			@mi_lista_alimento = Alimentos::Lista.new()
+			@mi_lista_alimento =  Alimentos::Lista.new()
                         @alimento1 = Alimentos::Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 	                @alimento2 = Alimentos::Alimento.new("Carne de Cordero",18.0,0.0,17.0,20.0,185.0)
 	                @alimento3 = Alimentos::Alimento.new("Camarones",17.6,1.5,0.6,18.0,2.0)
