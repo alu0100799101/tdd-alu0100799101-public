@@ -92,6 +92,17 @@ module Alimentos
 		        valor_aux
 		    end
         end
+		
+	def each(&block)
+             	node_aux = Nodo.new(nil,nil,nil)
+               	node_aux = @cabeza
+    
+            while !(node_aux.nil?)
+               yield node_aux.valor
+    
+                 node_aux = node_aux.siguiente
+            end
+        end 
 
   end
 end

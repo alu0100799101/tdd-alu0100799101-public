@@ -405,9 +405,12 @@ require 'spec_helper'
                         @mi_lista_alimento.push_front(@alimento3)  
                         @mi_lista_alimento.push_front(@alimento4)   
                         @mi_lista_alimento.push_front(@alimento5)
+			it  'La lista se puede recorrer' do
+                        	expect(@mi_lista_alimento).to respond_to(:each)
+                   	 end
 
 			it ' Prueba max y min  para la lista ' do 
-			
+				expect(@mi_lista_alimento).to respond_to(:max)
 				expect(@mi_lista_alimento.max).to eq(@alimento4)
 				expect(@mi_lista_alimento.min).to eq(@alimento3)
 
