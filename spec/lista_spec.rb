@@ -412,9 +412,9 @@ require 'spec_helper'
                    	 end
 
 			it ' Prueba max y min  para la lista ' do  
-				#expect(@mi_lista_alimento).to respond_to(:max)
-				#expect(@mi_lista_alimento.max).to eq(@alimento4)
-				#expect(@mi_lista_alimento.min).to eq(@alimento3)
+				expect(@mi_lista_alimento).to respond_to(:max)
+				expect(@mi_lista_alimento.max).to eq(@alimento1)
+				expect(@mi_lista_alimento.min).to eq(@alimento4)
 
 
 
