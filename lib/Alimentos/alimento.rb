@@ -36,7 +36,7 @@ module Alimentos
 		end
 			
 		def <=>(other)
-    			gei <=> ther.gei 
+    			gei <=> other.gei 
   		end
 	end
 end
