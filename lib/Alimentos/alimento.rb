@@ -34,5 +34,9 @@ module Alimentos
 		def totalkcal
 			kcalproteinas + kcallipidos + kcalglucidos
 		end
+			
+		def <=>(other)
+    			gei <=> ther.gei 
+  		end
 	end
 end
