@@ -19,11 +19,11 @@ RSpec.describe Alimentos::PlatosN do
 		it ' Prueba Existe conjunto de alimentos ' do
 			
 			expect(@plato1).to respond_to(:la)
-            
-
-		
+            	end
+		it ' Prueba Existe conjunto de alimentos ' do
+			expect(@plato1).to respond_to(:lg)
+			
 		end
-	
 	
 	end
 
