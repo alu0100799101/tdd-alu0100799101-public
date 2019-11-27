@@ -2,12 +2,14 @@
 
 module Alimentos
 	class PlatosN
-		attr_reader :nombre,:la,:lg , :proteinas
-		def initialize(nombre , la ,lg , proteinas)
+		attr_reader :nombre,:la,:lg , :proteinas , :carbohidratos , :lipidos , :vct
+		def initialize(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct)
 		@nombre = nombre
 		@lg = lg
 		@la = la
 		@proteinas = proteinas 
+		@lipidos = lipidos
+		@vct = vct
 		end
 	
 	end
