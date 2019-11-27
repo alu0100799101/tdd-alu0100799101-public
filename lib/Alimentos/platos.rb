@@ -8,6 +8,7 @@ module Alimentos
 		@lg = lg
 		@la = la
 		@proteinas = proteinas 
+		@carbohidratos = carbohidratos
 		@lipidos = lipidos
 		@vct = vct
 		end
