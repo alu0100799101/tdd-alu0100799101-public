@@ -35,14 +35,6 @@ RSpec.describe Alimentos::PlatosN do
 		end
 	
 	end
-
-RSpec.describe Alimentos::PlatoM do
-
-
-
-
-
-
 end
 
 
@@ -53,4 +45,5 @@ end
 
 
 
-end
+
+
