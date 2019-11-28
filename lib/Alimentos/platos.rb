@@ -20,7 +20,13 @@ module Alimentos
 			@proteinas + @carbohidratos + @lipidos
 		end
 		def por_prote
-		(@proteinas/suma_gramos)*100
+			(@proteinas/suma_gramos)*100
+		end
+		def por_carbo
+			(@carbohidratos/suma_gramos)*100
+		end
+		def por_lip
+			(@lipidos/suma_gramos)*100
 		end
 	end
 

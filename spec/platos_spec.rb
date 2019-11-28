@@ -30,14 +30,14 @@ RSpec.describe Alimentos::PlatosN do
 			
 		end
 		it ' Prueba Porcentaje de Proteinas' do
-			expect(@plato1.por_prote).to eq(58.87850467289719)
+			expect(@plato1.por_prote.round(2)).to eq(58.88)
 
 		end
 		it ' Prueba porcentaje carbohidratos' do
-			expect(@plato1.carbohidratos).to eq(13.13)
+			expect(@plato1.por_carbo.round(2)).to eq(1.56)
 		end
 		it ' Prueba porcentaje lipidos' do
-			expect(@plato1.lipidos).to eq(42.7)
+			expect(@plato1.por_lip.round(2)).to eq(39.56)
 		
 
 		end
@@ -47,7 +47,7 @@ RSpec.describe Alimentos::PlatosN do
 		end
 		it ' Prueba platos formateado ' do
 		
-		expect(@plato1.to_s) == " Nombre:Primer Plato, Conjunto Alimentos: #<Alimentos::Lista:0x000055989cb20d60> ,Conjunto Gramos: #<Alimentos::Lista:0x000055989cb20d38> ,Proteinas :4.21,Carbo :13.13,Lipidos :42.7,VCT :419.1 "
+		expect(@plato1.to_s) == " Nombre:Primer Plato, Conjunto Alimentos: #<Alimentos::Lista:0x000055989cb20d60> ,Conjunto Gramos: #<Alimentos::Lista:0x000055989cb20d38> ,Proteinas :58.88,Carbo :1.56,Lipidos :39.56,VCT :419.1 "
 
 		end
 	end
@@ -55,10 +55,17 @@ RSpec.describe Alimentos::PlatosN do
 		before :all do 
 			@la2 = Alimentos::Lista.new()
 			@lg2 = Alimentos::Lista.new()
-			@platoambiental1 = Alimentos::PlatosA.new()
+			@platoambiental1 = Alimentos::PlatosA.new("Primer Plato",@la2,@lg2,56.7,1.5,38.1,419.1,88,351)
 			end
-	it ' Pruebas ' do
-	end
+		it ' Pruebas para comprobar laclasede un objeto, eltipode un objeto y supertenecia a una jerarquia' do
+				expect(@platoambiental1).to be_instance_of(Alimentos::PlatosA)
+				expect(@platoambiental1.class).to eq(Alimentos::PlatosA)
+				 expect(Alimentos::PlatosA.superclass).to eq(Alimentos::PlatosN)
+		   		 expect(Alimentos::PlatosA.superclass.superclass).to eq(Object)
+		   		 expect(Alimentos::PlatosA.superclass.superclass.superclass).to eq(BasicObject)
+
+				expect(@platoambiental1.respond_to?(:por_prote))
+		end
 
 
 
