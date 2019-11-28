@@ -116,6 +116,8 @@ RSpec.describe Alimentos::Alimento do
 		        expect(@alimento1 > @alimento2).to eq(true)
 		        expect(@alimento1 < @alimento2).to eq(false)
 		        expect(@alimento1 == @alimento2).to eq(false)
+			expect(@alimento1 <= @alimento2).to eq(false)
+			 expect(@alimento1 >= @alimento2).to eq(true)
 		         expect(@alimento3 > @alimento4).to eq(true)
 		        expect(@alimento3 < @alimento4).to eq(false)
 		        expect(@alimento3 == @alimento4).to eq(false)
