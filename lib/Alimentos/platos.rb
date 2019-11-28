@@ -61,9 +61,9 @@ module Alimentos
 			 "( Nombre:#{@nombre}, Conjunto Alimentos: #{@la} ,Conjunto Gramos: #{@lg} ,Proteinas :#{@proteinas},Carbo :#{@carbohidratos},Lipidos :#{@lipidos},VCT :#{@vct} , CO2 :#{@co2},M2 :#{@m2} )"
 
 		end
-		#def <=>(other)
-		#	vct <=> other.vct
+		def <=>(other)
+			proteinas <=> other.proteinas
 		
-		#end
+		end
 	end
 end	

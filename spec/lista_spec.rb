@@ -418,7 +418,7 @@ require 'spec_helper'
 
 			end
 			
-		 	it "Prueba con collect donde obtenemos que indivuos de la lista tienen kcalproteinas >= 60 " do
+		 	it "Prueba con collect donde obtenemos que alimentos de la lista tienen kcalproteinas >= 60 " do
                         	expect(@mi_lista_alimento.collect{|i| i.kcalproteinas >= 60}).to eq([true,false,true,true,true])
                     	end		
 			#Selecciona de la lista de la cabeza a la cola y lo guarda en un vector con los valores que cumplan con lo que se selecciona.

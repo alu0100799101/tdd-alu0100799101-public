@@ -98,7 +98,7 @@ RSpec.describe Alimentos::PlatosN do
 	end
 
 
-	end
+	
 end
 
 

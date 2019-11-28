@@ -121,6 +121,8 @@ RSpec.describe Alimentos::Alimento do
 		         expect(@alimento3 > @alimento4).to eq(true)
 		        expect(@alimento3 < @alimento4).to eq(false)
 		        expect(@alimento3 == @alimento4).to eq(false)
+			expect(@alimento3 >= @alimento4).to eq(true)
+		        expect(@alimento3 <= @alimento4).to eq(false)
            	 end
 		it "Un alimento esta entre dos alimentos " do
 			expect(@alimento13.between?(@alimento1 , @alimento15)).to eq(false)
