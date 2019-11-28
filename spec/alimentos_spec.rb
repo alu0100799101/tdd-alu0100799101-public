@@ -123,6 +123,8 @@ RSpec.describe Alimentos::Alimento do
 		it "Un alimento esta entre dos alimentos " do
 			expect(@alimento13.between?(@alimento1 , @alimento15)).to eq(false)
 		end
+	
+		
 
 
 	end

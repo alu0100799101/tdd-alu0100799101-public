@@ -1,21 +1,31 @@
 
 
 module Alimentos
+	include Comparable , Enumerable
 	class PlatosN
 		attr_reader :nombre,:la,:lg , :proteinas , :carbohidratos , :lipidos , :vct
-		def initialize(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct)
+		def initialize(nombre , la ,lg , proteinas ,carbohidratos , lipidos , vct )
 		@nombre = nombre
-		@la = la
-		@lg = lg
-		@proteinas = proteinas 
-		@carbohidratos = carbohidratos
-		@lipidos = lipidos
-		@vct = vct
+		@la = Alimentos::Lista.new()
+		la.each{ |x| @la.push_back(x)}
+		@lg = Alimentos::Lista.new()
+		@proteinas = 0
+		@carbohidratos = 0
+		@lipidos = 0
+		@vct = 0
+		la.each do |x|
+			@proteinas += x.proteinas
+			@carbohidratos += x.carbohidratos
+			@lipidos += x.lipidos
+			@vct += x.totalkcal
+		end
+		#@vct = vct
 		end
 		def to_s
 			 "( Nombre:#{@nombre}, Conjunto Alimentos: #{@la} ,Conjunto Gramos: #{@lg} ,Proteinas :#{@proteinas},Carbo :#{@carbohidratos},Lipidos :#{@lipidos},VCT :#{@vct} )"
 
 		end
+		
 		def suma_gramos
 			@proteinas + @carbohidratos + @lipidos
 		end

@@ -428,9 +428,12 @@ require 'spec_helper'
 			it "Prueba sort para ordenar los alimentos de menor a mayor"do
                         expect(@mi_lista_alimento.sort).to eq([@alimento4,@alimento5,@alimento3,@alimento2,@alimento1])
                     	end
-
-
-
 		end
+
+		
+		
+
+
+		
 	end
 

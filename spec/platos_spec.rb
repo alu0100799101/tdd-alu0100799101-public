@@ -1,17 +1,14 @@
 require'spec_helper.rb'
 
-RSpec.describe Alimentos::PlatosN do
+RSpec.describe Alimentos::PlatosN do 
 		before  :each do
-		@la = Alimentos::Lista.new()
-		@lg = Alimentos::Lista.new()
 		@alimento1 = Alimentos::Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 		@alimento2 = Alimentos::Alimento.new("Carne de Cordero",18.0,0.0,17.0,20.0,185.0)
 		@alimento3 = Alimentos::Alimento.new("Camarones",17.6,1.5,0.6,18.0,2.0)
-		@plato1 = Alimentos::PlatosN.new("Primer Plato",@la,@lg,56.7,1.5,38.1,419.1)
-		@la.push_back(@alimento1)
-		@la.push_back(@alimento2)
-		@la.push_back(@alimento3)
-		@lg.push_back([24.2,35,19.7])
+		
+		@plato1 = Alimentos::PlatosN.new("Primer Plato",[@alimento1,@alimento2,@alimento3],[24.2,35,19.7],0,0,0,0)
+		
+		#lg.push_back([24.2,35,19.7])
                
 		
 		end
@@ -30,14 +27,14 @@ RSpec.describe Alimentos::PlatosN do
 			
 		end
 		it ' Prueba Porcentaje de Proteinas' do
-			expect(@plato1.por_prote.round(2)).to eq(58.88)
+			expect(@plato1.por_prote.round(2)).to eq(71.86)
 
 		end
 		it ' Prueba porcentaje carbohidratos' do
-			expect(@plato1.por_carbo.round(2)).to eq(1.56)
+			expect(@plato1.por_carbo.round(2)).to eq(1.9)
 		end
 		it ' Prueba porcentaje lipidos' do
-			expect(@plato1.por_lip.round(2)).to eq(39.56)
+			expect(@plato1.por_lip.round(2)).to eq(26.24)
 		
 
 		end
@@ -53,9 +50,12 @@ RSpec.describe Alimentos::PlatosN do
 	end
 	describe ' Pruebas herencia y PlatosAmbientales ' do
 		before :all do 
-			@la2 = Alimentos::Lista.new()
-			@lg2 = Alimentos::Lista.new()
-			@platoambiental1 = Alimentos::PlatosA.new("Primer Plato",@la2,@lg2,56.7,1.5,38.1,419.1,88,351)
+		
+			@alimento4 = Alimentos::Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+			@alimento5 = Alimentos::Alimento.new("Salmón",19.9,0.0,13.6,6.0,3.7)
+			@alimento6 = Alimentos::Alimento.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
+			@platoambiental1 = Alimentos::PlatosA.new("Primer plato",[@alimento4,@alimento5,@alimento6],[82.3,33.5,27.8],0,0,0,0,88,351)
+		#@platoambiental2 = Alimentos::PlantosA.new("Segundo Plato",)
 			end
 		it ' Pruebas para comprobar laclasede un objeto, eltipode un objeto y supertenecia a una jerarquia' do
 				expect(@platoambiental1).to be_instance_of(Alimentos::PlatosA)
@@ -69,6 +69,11 @@ RSpec.describe Alimentos::PlatosN do
 		it 'Prueba C02 platoambietal' do
 		
 			expect(@platoambiental1.co2).to eq(88)
+		end	
+
+		it ' Prueba m2 Plato Ambiental' do
+
+			expect(@platoambiental1.m2).to eq(351)
 		end
 
 
