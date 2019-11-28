@@ -39,6 +39,10 @@ RSpec.describe Alimentos::PlatosN do
 		
 
 		end
+		it ' Valor energetico total plato ' do
+		
+			expect(@plato1.vct).to eq(419.1)
+		end
 		
 	
 	end
