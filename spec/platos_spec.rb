@@ -43,6 +43,11 @@ RSpec.describe Alimentos::PlatosN do
 		
 			expect(@plato1.vct).to eq(419.1)
 		end
+		it ' Prueba platos formateado ' do
+		
+		expect(@plato1.to_s) == " Nombre:Primer Plato, Conjunto Alimentos: #<Alimentos::Lista:0x000055989cb20d60> ,Conjunto Gramos: #<Alimentos::Lista:0x000055989cb20d38> ,Proteinas :4.21,Carbo :13.13,Lipidos :42.7,VCT :419.1 "
+
+		end
 		
 	
 	end
