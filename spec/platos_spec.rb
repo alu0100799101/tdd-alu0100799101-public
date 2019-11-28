@@ -7,12 +7,12 @@ RSpec.describe Alimentos::PlatosN do
 		@alimento1 = Alimentos::Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 		@alimento2 = Alimentos::Alimento.new("Carne de Cordero",18.0,0.0,17.0,20.0,185.0)
 		@alimento3 = Alimentos::Alimento.new("Camarones",17.6,1.5,0.6,18.0,2.0)
-		@plato1 = Alimentos::PlatosN.new("Primer Plato",@la,@lg,4.21,13.13,42.7,419.1)
+		@plato1 = Alimentos::PlatosN.new("Primer Plato",@la,@lg,56.7,1.5,38.1,419.1)
 		@la.push_back(@alimento1)
 		@la.push_back(@alimento2)
 		@la.push_back(@alimento3)
 		@lg.push_back([24.2,35,19.7])
-               # Las cantidades de proteinas,glucidos,carbohidratos son calculados a mano sumando los gramos y dividiendolo por el porcentaje que se quiere obtener
+               
 		
 		end
 	describe ' Pruebas para PlatoNutricional' do
@@ -30,7 +30,7 @@ RSpec.describe Alimentos::PlatosN do
 			
 		end
 		it ' Prueba Porcentaje de Proteinas' do
-			expect(@plato1.proteinas).to eq(4.21)
+			expect(@plato1.por_prote).to eq(58.87850467289719)
 
 		end
 		it ' Prueba porcentaje carbohidratos' do
@@ -50,8 +50,20 @@ RSpec.describe Alimentos::PlatosN do
 		expect(@plato1.to_s) == " Nombre:Primer Plato, Conjunto Alimentos: #<Alimentos::Lista:0x000055989cb20d60> ,Conjunto Gramos: #<Alimentos::Lista:0x000055989cb20d38> ,Proteinas :4.21,Carbo :13.13,Lipidos :42.7,VCT :419.1 "
 
 		end
-		
-	
+	end
+	describe ' Pruebas herencia y PlatosAmbientales ' do
+		before :all do 
+			@la2 = Alimentos::Lista.new()
+			@lg2 = Alimentos::Lista.new()
+			@platoambiental1 = Alimentos::PlatosA.new()
+			end
+	it ' Pruebas ' do
+	end
+
+
+
+
+
 	end
 end
 
