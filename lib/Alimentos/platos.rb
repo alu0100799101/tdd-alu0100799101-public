@@ -32,6 +32,7 @@ module Alimentos
 
 	
 	class PlatosA < PlatosN
+		attr_reader :co2 , :m2
 
 		def initialize(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct , co2,m2)
 			super(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct)

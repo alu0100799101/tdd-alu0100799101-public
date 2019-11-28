@@ -66,6 +66,10 @@ RSpec.describe Alimentos::PlatosN do
 
 				expect(@platoambiental1.respond_to?(:por_prote))
 		end
+		it 'Prueba C02 platoambietal' do
+		
+			expect(@platoambiental1.co2).to eq(88)
+		end
 
 
 
