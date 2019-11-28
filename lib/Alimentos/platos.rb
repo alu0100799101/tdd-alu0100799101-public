@@ -51,5 +51,9 @@ module Alimentos
 	
 
 		end
+		def to_s
+			 "( Nombre:#{@nombre}, Conjunto Alimentos: #{@la} ,Conjunto Gramos: #{@lg} ,Proteinas :#{@proteinas},Carbo :#{@carbohidratos},Lipidos :#{@lipidos},VCT :#{@vct} , CO2 :#{@co2},M2 :#{@m2} )"
+
+		end
 	end
 end	

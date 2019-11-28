@@ -21,6 +21,7 @@ RSpec.describe Alimentos::PlatosN do
 		it ' Prueba Existe conjunto de alimentos ' do
 			
 			expect(@plato1).to respond_to(:la)
+			
             	end
 		it ' Prueba Existe conjunto de alimentos ' do
 			expect(@plato1).to respond_to(:lg)
@@ -54,7 +55,7 @@ RSpec.describe Alimentos::PlatosN do
 			@alimento4 = Alimentos::Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
 			@alimento5 = Alimentos::Alimento.new("Salmón",19.9,0.0,13.6,6.0,3.7)
 			@alimento6 = Alimentos::Alimento.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
-			@platoambiental1 = Alimentos::PlatosA.new("Primer plato",[@alimento4,@alimento5,@alimento6],[82.3,33.5,27.8],0,0,0,0,88,351)
+			@platoambiental1 = Alimentos::PlatosA.new("Primer plato",[@alimento4,@alimento5,@alimento6],[82.3,33.5,27.8],46.7,47,49.9,823.9000000000001,88,351)
 		#@platoambiental2 = Alimentos::PlantosA.new("Segundo Plato",)
 			end
 		it ' Pruebas para comprobar laclasede un objeto, eltipode un objeto y supertenecia a una jerarquia' do
@@ -74,6 +75,10 @@ RSpec.describe Alimentos::PlatosN do
 		it ' Prueba m2 Plato Ambiental' do
 
 			expect(@platoambiental1.m2).to eq(351)
+		end
+		it ' Formateo Platos Ambietales ' do
+			expect(@platoambiental1.to_s) == "( Nombre:Primer plato, Conjunto Alimentos: #<Alimentos::Lista:0x00005560d9b50b50> ,Conjunto Gramos: ...5560d9b50808> ,Proteinas :46.7,Carbo :47.0,Lipidos :49.9,VCT :823.9000000000001 , CO2 :88,M2 :351 )"
+
 		end
 
 
