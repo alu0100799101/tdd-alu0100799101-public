@@ -4,7 +4,7 @@ module Alimentos
 	include Comparable 
 	class PlatosN
 		attr_reader :nombre,:la,:lg , :proteinas , :carbohidratos , :lipidos , :vct
-		def initialize(nombre , la ,lg , proteinas ,carbohidratos , lipidos , vct )
+		def initialize(nombre , la ,lg , proteinas ,carbohidratos , lipidos , vct,indice_impacto )
 		@nombre = nombre
 		@la = Alimentos::Lista.new()
 		la.each{ |x| @la.push_back(x)}
@@ -13,6 +13,7 @@ module Alimentos
 		@carbohidratos = 0
 		@lipidos = 0
 		@vct = 0
+		@indice_impacto = indice_impacto
 		la.each do |x|
 			@proteinas += x.proteinas
 			@carbohidratos += x.carbohidratos
@@ -42,6 +43,15 @@ module Alimentos
 		def <=>(other)
 		vct <=> other.vct
 		
+		end
+		def huella_nutricional
+		if( huella_nutricional == 'Bajo')
+			(indice_impacto == 1) && (vct < 670) && (suma_gramos < 800)
+		elsif( huella_nutriconal == 'Regular')
+			(indice_impacto == 2) && ((vct > 670) && (vct < 830)) && ((suma_gramos > 800) && (suma_gramos < 1200))
+		elsif( huella_impacto == 'Alto')
+			( indice_impacto == 3) && (vct > 830 ) && (suma_gramos > 1200)
+		end
 		end
 	end
 
