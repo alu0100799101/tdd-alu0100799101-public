@@ -19,8 +19,9 @@ RSpec.describe Alimentos::PlatosN do
 		@alimento15 = Alimentos::Alimento.new("Nuez",20.0,21.0,54.0,0.3,7.9)
 		
 		@plato1 = Alimentos::PlatosN.new("Primer Plato",[@alimento1,@alimento2,@alimento3],[24.2,35,19.7],0,0,0,0,1)
-		@plato2 = Alimentos::PlatosN.new("Queso con Tofu",[@alimento5,@alimento13],[25.0,8.0],0,0,0,0,1)
-		@menu1 = [@plato1,@plato2]
+		@plato2 = Alimentos::PlatosN.new("Queso con Tofu y chocolate",[@alimento5,@alimento13,@alimento4],[33.5,14.7,82.3],0,0,0,0,2)
+		@plato3 = Alimentos::PlatosN.new("Parrillada",[@alimento1,@alimento2,@alimento6,@alimento7],[24.2,35,27.8,26.2],0,0,0,0,1)
+		@menu1 = [@plato1,@plato2,@plato3]
 		#lg.push_back([24.2,35,19.7])
                
 		
@@ -55,7 +56,8 @@ RSpec.describe Alimentos::PlatosN do
 		it ' Valor energetico total plato ' do
 		
 			expect(@plato1.vct).to eq(419.1)
-			expect(@plato2.vct).to eq(284.79999999999995)
+			expect(@plato2.vct).to eq(764.0)
+			expect(@plato3.vct).to eq(612.8)
 		end
 		it ' Prueba platos formateado ' do
 		
@@ -100,7 +102,7 @@ RSpec.describe Alimentos::PlatosN do
 		
 	
 		it' Pruebas Comparables entre platos 'do
-		 #xpect(@plato1 > @platoambiental1).to eq(true)
+		 #expect(@plato1 > @platoambiental1).to eq(true)
 		       # expect(@platoambiental1 < @plato1).to eq(false)
 		       # expect(@plato1 == @platoambiental1).to eq(false)
 		
@@ -108,6 +110,15 @@ RSpec.describe Alimentos::PlatosN do
 
 		end
 
+
+	end
+	describe 'Pruebas Practica 10 ' do
+		it ' Prueba max huella nutricional ' do
+		expect(@menu1).to respond_to(:max)
+		expect(@menu1.max).to eq(@plato2)
+		end
+
+	
 
 	end
 
