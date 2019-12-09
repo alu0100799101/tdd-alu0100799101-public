@@ -113,6 +113,9 @@ RSpec.describe Alimentos::PlatosN do
 
 	end
 	describe 'Pruebas Practica 10 ' do
+		it ' Prueba huella nutricional de los platos ' do
+			expect(@plato2.huella_nutricional).to eq('Regular')
+		end
 		it ' Prueba max huella nutricional ' do
 		expect(@menu1).to respond_to(:max)
 		expect(@menu1.max).to eq(@plato2)
