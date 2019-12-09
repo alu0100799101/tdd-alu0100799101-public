@@ -41,7 +41,7 @@ module Alimentos
 			(@lipidos/suma_gramos)*100
 		end
 		def <=>(other)
-		vct <=> other.vct
+		 indice_impacto <=> other.indice_impacto
 		
 		end
 		def huella_nutricional
@@ -53,6 +53,7 @@ module Alimentos
 			( indice_impacto == 3) && (vct > 830 ) && (suma_gramos > 1200)
 		end
 		end
+
 	end
 
 	
