@@ -3,8 +3,8 @@
 module Alimentos
 	include Comparable 
 	class PlatosN
-		attr_reader :nombre,:la,:lg , :proteinas , :carbohidratos , :lipidos , :vct
-		def initialize(nombre , la ,lg , proteinas ,carbohidratos , lipidos , vct,indice_impacto )
+		attr_reader :nombre,:la,:lg , :proteinas , :carbohidratos , :lipidos , :vct , :indice_impacto
+		def initialize (nombre , la ,lg , proteinas ,carbohidratos , lipidos , vct, indice_impacto )
 		@nombre = nombre
 		@la = Alimentos::Lista.new()
 		la.each{ |x| @la.push_back(x)}
@@ -60,8 +60,8 @@ module Alimentos
 		
 		attr_reader :co2 , :m2
 
-		def initialize(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct , co2,m2)
-			super(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct)
+		def initialize(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct, indice_impacto , co2,m2)
+			super(nombre , la ,lg , proteinas , carbohidratos , lipidos ,  vct , indice_impacto)
 			@co2 = co2
 			@m2 = m2
 	

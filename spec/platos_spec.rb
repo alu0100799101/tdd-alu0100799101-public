@@ -18,8 +18,8 @@ RSpec.describe Alimentos::PlatosN do
 		@alimento14 = Alimentos::Alimento.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
 		@alimento15 = Alimentos::Alimento.new("Nuez",20.0,21.0,54.0,0.3,7.9)
 		
-		@plato1 = Alimentos::PlatosN.new("Primer Plato",[@alimento1,@alimento2,@alimento3],[24.2,35,19.7],0,0,0,0)
-		@plato2 = Alimentos::PlatosN.new("Queso con Tofu",[@alimento5,@alimento13],[25.0,8.0],0,0,0,0)
+		@plato1 = Alimentos::PlatosN.new("Primer Plato",[@alimento1,@alimento2,@alimento3],[24.2,35,19.7],0,0,0,0,1)
+		@plato2 = Alimentos::PlatosN.new("Queso con Tofu",[@alimento5,@alimento13],[25.0,8.0],0,0,0,0,1)
 		@menu1 = [@plato1,@plato2]
 		#lg.push_back([24.2,35,19.7])
                
@@ -55,6 +55,7 @@ RSpec.describe Alimentos::PlatosN do
 		it ' Valor energetico total plato ' do
 		
 			expect(@plato1.vct).to eq(419.1)
+			expect(@plato2.vct).to eq(284.79999999999995)
 		end
 		it ' Prueba platos formateado ' do
 		
@@ -68,7 +69,7 @@ RSpec.describe Alimentos::PlatosN do
 			@alimento4 = Alimentos::Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
 			@alimento5 = Alimentos::Alimento.new("Salmón",19.9,0.0,13.6,6.0,3.7)
 			@alimento6 = Alimentos::Alimento.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
-			@platoambiental1 = Alimentos::PlatosA.new("Primer plato",[@alimento4,@alimento5,@alimento6],[82.3,33.5,27.8],46.7,47,49.9,823.9000000000001,88,351)
+			@platoambiental1 = Alimentos::PlatosA.new("Primer plato",[@alimento4,@alimento5,@alimento6],[82.3,33.5,27.8],46.7,47,49.9,823.9000000000001,1,88,351)
 			
 		#@platoambiental2 = Alimentos::PlantosA.new("Segundo Plato",)
 			end
