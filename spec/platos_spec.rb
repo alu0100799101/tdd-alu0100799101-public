@@ -18,9 +18,9 @@ RSpec.describe Alimentos::PlatosN do
 		@alimento14 = Alimentos::Alimento.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
 		@alimento15 = Alimentos::Alimento.new("Nuez",20.0,21.0,54.0,0.3,7.9)
 		
-		@plato1 = Alimentos::PlatosN.new("Primer Plato",[@alimento1,@alimento2,@alimento3],[24.2,35,19.7],0,0,0,0,1)
-		@plato2 = Alimentos::PlatosN.new("Queso con Tofu y chocolate",[@alimento5,@alimento13,@alimento4],[33.5,14.7,82.3],0,0,0,0,2)
-		@plato3 = Alimentos::PlatosN.new("Parrillada",[@alimento1,@alimento2,@alimento6,@alimento7],[24.2,35,27.8,26.2],0,0,0,0,1)
+		@plato1 = Alimentos::PlatosN.new("Primer Plato",[@alimento1,@alimento2,@alimento3],[24.2,35,19.7],0,0,0,0,1,[3,4,6.75])
+		@plato2 = Alimentos::PlatosN.new("Queso con Tofu y chocolate",[@alimento5,@alimento13,@alimento4],[33.5,14.7,82.3],0,0,0,0,2,[2,1.5,1])
+		@plato3 = Alimentos::PlatosN.new("Parrillada",[@alimento1,@alimento2,@alimento6,@alimento7],[24.2,35,27.8,26.2],0,0,0,0,1,[3,4,5.6,2.5])
 		@menu1 = [@plato1,@plato2,@plato3]
 		#lg.push_back([24.2,35,19.7])
                
