@@ -120,6 +120,15 @@ RSpec.describe Alimentos::PlatosN do
 		expect(@menu1).to respond_to(:max)
 		expect(@menu1.max).to eq(@plato2)
 		end
+		it'Prueba precio menu 1 ' do
+		precio_menu = @menu1.map{|i| @menu1.precio}
+		total_menu = precio_menu.reduce(:+)
+           	 precio_plato = @plato1.precio
+            	 precio_plato = precio_plato * 0.10
+            	expect(precio_menu >= precio_plato).to eq(true)
+
+			
+		end
 
 	
 
