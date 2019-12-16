@@ -1,10 +1,10 @@
 
 
 module Alimentos
-	include Comparable 
+	include Comparable , Enumerable
 	class PlatosN
 		attr_reader :nombre,:la,:lg , :proteinas , :carbohidratos , :lipidos , :vct , :indice_impacto , :precio
-		def initialize (nombre , la ,lg , proteinas ,carbohidratos , lipidos , vct, indice_impacto,precio)
+		def initialize (nombre , la ,lg , proteinas ,carbohidratos , lipidos , vct, indice_impacto, precio)
 		@nombre = nombre
 		@la = Alimentos::Lista.new()
 		la.each{ |x| @la.push_back(x)}
@@ -45,6 +45,11 @@ module Alimentos
 		 indice_impacto <=> other.indice_impacto
 		
 		end
+		def + (other)
+			precio + other.precio * 0.25
+		end
+		
+		
 		def huella_nutricional
 		if( (indice_impacto = 1) && (vct < 670) && (suma_gramos < 800))
 			huella_nutricional = 'Bajo'
@@ -63,8 +68,8 @@ module Alimentos
 		
 		attr_reader :co2 , :m2
 
-		def initialize(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct, indice_impacto , co2,m2)
-			super(nombre , la ,lg , proteinas , carbohidratos , lipidos ,  vct , indice_impacto)
+		def initialize(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct, indice_impacto , precio, co2,m2)
+			super(nombre , la ,lg , proteinas , carbohidratos , lipidos ,  vct , indice_impacto, precio)
 			@co2 = co2
 			@m2 = m2
 	

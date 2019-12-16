@@ -71,7 +71,7 @@ RSpec.describe Alimentos::PlatosN do
 			@alimento4 = Alimentos::Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
 			@alimento5 = Alimentos::Alimento.new("Salmón",19.9,0.0,13.6,6.0,3.7)
 			@alimento6 = Alimentos::Alimento.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
-			@platoambiental1 = Alimentos::PlatosA.new("Primer plato",[@alimento4,@alimento5,@alimento6],[82.3,33.5,27.8],46.7,47,49.9,823.9000000000001,1,88,351)
+			@platoambiental1 = Alimentos::PlatosA.new("Primer plato",[@alimento4,@alimento5,@alimento6],[82.3,33.5,27.8],46.7,47,49.9,823.9000000000001,1,[	1.5,4,5],88,351)
 			
 		#@platoambiental2 = Alimentos::PlantosA.new("Segundo Plato",)
 			end
@@ -121,12 +121,10 @@ RSpec.describe Alimentos::PlatosN do
 		expect(@menu1.max).to eq(@plato2)
 		end
 		it'Prueba precio menu 1 ' do
-		precio_menu = @menu1.map{|i| @menu1.precio}
-		total_menu = precio_menu.reduce(:+)
-           	 precio_plato = @plato1.precio
-            	 precio_plato = precio_plato * 0.10
-            	expect(precio_menu >= precio_plato).to eq(true)
-
+		precio_menu = @menu1.map{|i| i.huella_nutricional}
+		precio_menu_total = precio_menu.reduce(:+)
+           	 
+            	
 			
 		end
 
