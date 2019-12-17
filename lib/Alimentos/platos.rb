@@ -51,11 +51,11 @@ module Alimentos
 		
 		
 		def huella_nutricional
-		if( (indice_impacto = 1) && (vct < 670) && (suma_gramos < 800))
+		if( (indice_impacto == 1) && (vct < 670) && (suma_gramos < 800))
 			huella_nutricional = 'Bajo'
-		elsif( (indice_impacto = 2) && ((vct > 670) || (vct < 830)) && ((suma_gramos > 800) || (suma_gramos < 1200)))
+		elsif( (indice_impacto == 2) && ((vct > 670) || (vct < 830)) && ((suma_gramos > 800) || (suma_gramos < 1200)))
 			huella_nutricional = 'Regular'
-		elsif( ( indice_impacto = 3) && (vct > 830 ) && (suma_gramos > 1200))
+		elsif( ( indice_impacto == 3) && (vct > 830 ) && (suma_gramos > 1200))
 			huella_nutricional = 'Alta'
 		end
 			return huella_nutricional

@@ -19,9 +19,13 @@ RSpec.describe Alimentos::PlatosN do
 		@alimento15 = Alimentos::Alimento.new("Nuez",20.0,21.0,54.0,0.3,7.9)
 		
 		@plato1 = Alimentos::PlatosN.new("Primer Plato",[@alimento1,@alimento2,@alimento3],[24.2,35,19.7],0,0,0,0,1,[3,4,6.75])
-		@plato2 = Alimentos::PlatosN.new("Queso con Tofu y chocolate",[@alimento5,@alimento13,@alimento4],[33.5,14.7,82.3],0,0,0,0,2,[2,1.5,1])
+		@plato2 = Alimentos::PlatosN.new("Queso con Tofu y chocolate",[@alimento5,@alimento13,@alimento4],[33.5,14.7,82.3],0,0,0,0,2,[6,1.5,1])
 		@plato3 = Alimentos::PlatosN.new("Parrillada",[@alimento1,@alimento2,@alimento6,@alimento7],[24.2,35,27.8,26.2],0,0,0,0,1,[3,4,5.6,2.5])
+		@plato4 = Alimentos::PlatosN.new("Salmon Salsa Chocolate y Nueces ",[@alimento5,@alimento4,@alimento15],[33.5,82.3,95],0,0,0,0,3,[6,1,2])
+		@plato5 = Alimentos::PlatosN.new("Pollo a la Cerveza",[@alimento7,@alimento9],[26.2,4.1],0,0,0,0,1,[2.5,1])
 		@menu1 = [@plato1,@plato2,@plato3]
+		@menu2 = [@plato4,@plato5]
+		
 		#lg.push_back([24.2,35,19.7])
                
 		
@@ -58,6 +62,7 @@ RSpec.describe Alimentos::PlatosN do
 			expect(@plato1.vct).to eq(419.1)
 			expect(@plato2.vct).to eq(764.0)
 			expect(@plato3.vct).to eq(612.8)
+			expect(@plato4.vct).to eq(1331.2)
 		end
 		it ' Prueba platos formateado ' do
 		
