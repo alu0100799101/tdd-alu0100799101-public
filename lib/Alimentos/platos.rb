@@ -46,7 +46,7 @@ module Alimentos
 		
 		end
 		def + (other)
-			precio + other.precio * 0.25
+			precio + other.precio 
 		end
 		
 		

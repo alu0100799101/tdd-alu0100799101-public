@@ -121,9 +121,10 @@ RSpec.describe Alimentos::PlatosN do
 		expect(@menu1.max).to eq(@plato2)
 		end
 		it'Prueba precio menu 1 ' do
-		precio_menu = @menu1.map{|i| i.huella_nutricional}
+		precio_menu = @menu1.map{|i| i.precio}
 		precio_menu_total = precio_menu.reduce(:+)
-           	 
+		precio_menu = precio_menu_total * 0.25
+		
             	
 			
 		end
