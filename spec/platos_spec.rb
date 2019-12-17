@@ -103,20 +103,6 @@ RSpec.describe Alimentos::PlatosN do
 
 		end
 	end
-	describe ' Dietas' do
-		
-	
-		it' Pruebas Comparables entre platos 'do
-		 #expect(@plato1 > @platoambiental1).to eq(true)
-		       # expect(@platoambiental1 < @plato1).to eq(false)
-		       # expect(@plato1 == @platoambiental1).to eq(false)
-		
-	
-
-		end
-
-
-	end
 	describe 'Pruebas Practica 10 ' do
 		it ' Prueba huella nutricional de los platos ' do
 			expect(@plato2.huella_nutricional).to eq('Regular')
@@ -125,14 +111,28 @@ RSpec.describe Alimentos::PlatosN do
 		expect(@menu1).to respond_to(:max)
 		expect(@menu1.max).to eq(@plato2)
 		end
-		it'Prueba precio menu 1 ' do
+		it'Prueba precio menu 1 huella nutricional max = Regular' do
 		precio_menu = @menu1.map{|i| i.precio}
 		precio_menu_total = precio_menu.reduce(:+)
 		precio_menu = precio_menu_total * 0.25
+		end
+		
+		it ' Prueba max menu2 huella nutricional ' do
+		expect(@menu2.max).to eq(@plato4)
+		end
+		it ' Prueba precio menu 2 huella nutricional max = Alta' do
+			
+			
+			precio_menu = @menu2.map{|i| i.precio}
+			precio_menu_total = precio_menu.reduce(:+)
+			precio_menu = precio_menu_total * 0.5
+		
+		end
+	
 		
             	
 			
-		end
+		
 
 	
 
