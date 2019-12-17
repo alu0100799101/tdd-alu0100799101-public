@@ -1,10 +1,15 @@
+#Practica7 Lista
+#Asignatura: Lenguajes y Paradigma de La Programación
+# Centro : Escuela Superior Ingenieria Informatica ULL
+#@author Adrián Herrera Darias
 module Alimentos 
-
+	#Clase Nodo
 	Nodo = Struct.new(:valor, :siguiente, :previo)
-
+	#Clase Lista
  	class Lista
+		#Modulo Enumerable
 		include Enumerable
-	       
+	       #Constructor,devuel numero de nodos , la cabeza y cola de la lista
 		attr_reader :n_nodos, :cabeza, :cola
 		
 		def initialize 
@@ -12,7 +17,7 @@ module Alimentos
 		    @cabeza = nil
 		    @cola = nil
 		end
-
+		#Metodo Comprobar lista vacia
 		 def empty?
 		      if @cabeza == nil
 		       return true

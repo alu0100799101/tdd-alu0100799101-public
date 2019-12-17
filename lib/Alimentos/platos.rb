@@ -1,8 +1,16 @@
-
+#Practica 8 Herencia 
+#Practica 9 Programacion Fucional
+#Asignatura: Lenguajes y Paradigma de La Programación
+# Centro : Escuela Superior Ingenieria Informatica ULL
+#@author Adrián Herrera Darias
 
 module Alimentos
-	include Comparable , Enumerable
+	#Modulo Comparable
+	include Comparable 
+	#Clase Plato Nutricional 
 	class PlatosN
+		#@return nombre del plato,lista alimentos,lista gramos, proteinas, carbohidratos , lipidos , valor calorico total, indice_impacto,precio
+ 
 		attr_reader :nombre,:la,:lg , :proteinas , :carbohidratos , :lipidos , :vct , :indice_impacto , :precio
 		def initialize (nombre , la ,lg , proteinas ,carbohidratos , lipidos , vct, indice_impacto, precio)
 		@nombre = nombre
@@ -23,33 +31,39 @@ module Alimentos
 		end
 		#@vct = vct
 		end
+		#Metodo obtener formateado el Plato
 		def to_s
 			 "( Nombre:#{@nombre}, Conjunto Alimentos: #{@la} ,Conjunto Gramos: #{@lg} ,Proteinas :#{@proteinas},Carbo :#{@carbohidratos},Lipidos :#{@lipidos},VCT :#{@vct} )"
 
 		end
 		
-		
+		#Metodo para obtener cantidad gramos de un plato
 		def suma_gramos
 			@proteinas + @carbohidratos + @lipidos
 		end
+		#Metodo para obtener la porcion de proteinas(gramos) de un plato
 		def por_prote
 			(@proteinas/suma_gramos)*100
 		end
+		#Meto obtener la porcion de carbohidratos de un plato
 		def por_carbo
 			(@carbohidratos/suma_gramos)*100
 		end
+		#Metodo obtener la porcion de Lipidos de un plato
 		def por_lip
 			(@lipidos/suma_gramos)*100
 		end
+		 # Método <=> del mixin Comparable
 		def <=>(other)
 		 indice_impacto <=> other.indice_impacto
 		
 		end
+		 # Método + del mixin Comparable
 		def + (other)
 			precio + other.precio 
 		end
 		
-		
+		#Metodo Para Obtener la Huella Nutricional
 		def huella_nutricional
 		if( (indice_impacto == 1) && (vct < 670) && (suma_gramos < 800))
 			huella_nutricional = 'Bajo'
@@ -63,7 +77,7 @@ module Alimentos
 
 	end
 
-	
+	#Clase Plato Ambiental que hereda de Nutricional
 	class PlatosA < PlatosN
 		
 		attr_reader :co2 , :m2

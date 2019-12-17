@@ -1,5 +1,9 @@
 require'spec_helper.rb'
-
+#Practica 8 Herencia 
+#Practica 9 Programacion Fucional
+#Asignatura: Lenguajes y Paradigma de La Programación
+# Centro : Escuela Superior Ingenieria Informatica ULL
+#@author Adrián Herrera Darias
 RSpec.describe Alimentos::PlatosN do 
 		before  :each do
 		@alimento1 = Alimentos::Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
@@ -26,7 +30,7 @@ RSpec.describe Alimentos::PlatosN do
 		@menu1 = [@plato1,@plato2,@plato3]
 		@menu2 = [@plato4,@plato5]
 		
-		#lg.push_back([24.2,35,19.7])
+		
                
 		
 		end
@@ -78,7 +82,7 @@ RSpec.describe Alimentos::PlatosN do
 			@alimento6 = Alimentos::Alimento.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
 			@platoambiental1 = Alimentos::PlatosA.new("Primer plato",[@alimento4,@alimento5,@alimento6],[82.3,33.5,27.8],46.7,47,49.9,823.9000000000001,1,[	1.5,4,5],88,351)
 			
-		#@platoambiental2 = Alimentos::PlantosA.new("Segundo Plato",)
+		
 			end
 		it ' Pruebas para comprobar laclasede un objeto, eltipode un objeto y supertenecia a una jerarquia' do
 				expect(@platoambiental1).to be_instance_of(Alimentos::PlatosA)
