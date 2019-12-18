@@ -9,10 +9,10 @@ module Alimentos
 	include Comparable 
 	#Clase Plato Nutricional 
 	class PlatosN
-		#@return nombre del plato,lista alimentos,lista gramos, proteinas, carbohidratos , lipidos , valor calorico total, indice_impacto,precio
+		#@return nombre del plato,lista alimentos,lista gramos, proteinas, carbohidratos , lipidos , valor calorico total, indice_impacto
  
-		attr_reader :nombre,:la,:lg , :proteinas , :carbohidratos , :lipidos , :vct , :indice_impacto , :precio
-		def initialize (nombre , la ,lg , proteinas ,carbohidratos , lipidos , vct, indice_impacto, precio)
+		attr_reader :nombre,:la,:lg , :proteinas , :carbohidratos , :lipidos , :vct , :indice_impacto  
+		def initialize (nombre , la ,lg , proteinas ,carbohidratos , lipidos , vct, indice_impacto)
 		@nombre = nombre
 		@la = Alimentos::Lista.new()
 		la.each{ |x| @la.push_back(x)}
@@ -22,7 +22,7 @@ module Alimentos
 		@lipidos = 0
 		@vct = 0
 		@indice_impacto = indice_impacto
-		@precio=[]
+		
 		la.each do |x|
 			@proteinas += x.proteinas
 			@carbohidratos += x.carbohidratos
@@ -58,10 +58,7 @@ module Alimentos
 		 indice_impacto <=> other.indice_impacto
 		
 		end
-		 # Método + del mixin Comparable
-		def + (other)
-			precio + other.precio 
-		end
+		
 		
 		#Metodo Para Obtener la Huella Nutricional
 		def huella_nutricional
@@ -82,8 +79,8 @@ module Alimentos
 		
 		attr_reader :co2 , :m2
 
-		def initialize(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct, indice_impacto , precio, co2,m2)
-			super(nombre , la ,lg , proteinas , carbohidratos , lipidos ,  vct , indice_impacto, precio)
+		def initialize(nombre , la ,lg , proteinas , carbohidratos , lipidos , vct, indice_impacto , co2,m2)
+			super(nombre , la ,lg , proteinas , carbohidratos , lipidos ,  vct , indice_impacto)
 			@co2 = co2
 			@m2 = m2
 	
