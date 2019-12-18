@@ -32,6 +32,7 @@ RSpec.describe Alimentos::PlatosN do
 		@precio1=[2.5,2.5,5]
 		@precio2 =[6,3.5]
 		
+		
                
 		
 		end
@@ -111,6 +112,7 @@ RSpec.describe Alimentos::PlatosN do
 	describe 'Pruebas Practica 10 ' do
 		it ' Prueba huella nutricional de los platos ' do
 			expect(@plato2.huella_nutricional).to eq('Regular')
+			
 		end
 		it ' Prueba max huella nutricional ' do
 		expect(@menu1).to respond_to(:max)
