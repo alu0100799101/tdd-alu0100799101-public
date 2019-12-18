@@ -29,7 +29,7 @@ module Alimentos
 			@lipidos += x.lipidos
 			@vct += x.totalkcal
 		end
-		#@vct = vct
+		
 		end
 		#Metodo obtener formateado el Plato
 		def to_s
