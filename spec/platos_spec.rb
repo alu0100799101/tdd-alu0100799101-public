@@ -137,13 +137,36 @@ RSpec.describe Alimentos::PlatosN do
 			
 		
 		end
+	end
 	
+	describe ' Pruebas DSL' do 
+		before :all do
 		
-            	
+			plato = Plato.new("Hamburguesa")do
+				nombre "Hamburguesa especial de la casa"
+				alimento :descripcion => "Carne de Vaca",
+					 :gramos => 100
+				alimento :descripcion => "Huevo",
+					 :gramos => 20
+			end
 			
-		
+			menu = Menu.new("Combinado nº 1") do
+				descripcion "Hamburguesa,papas,refreso"
+				componente :descripcion => "Hamburguesa especial",
+					   :precio => 4.25
+				componente :descripcion => "Papas pequeñas",
+					   :precio => 1.75
+				componente :descripcion => "Refresco de lata" ,
+					   :precio => 1.50
+				precio	7.50
+			end
+		end
 
-	
+
+
+
+
+
 
 	end
 
