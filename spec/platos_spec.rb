@@ -142,27 +142,50 @@ RSpec.describe Alimentos::PlatosN do
 	describe ' Pruebas DSL' do 
 		before :all do
 		
-			plato = Plato.new("Hamburguesa")do
-				nombre "Hamburguesa especial de la casa"
-				alimento :descripcion => "Carne de Vaca",
-					 :gramos => 100
-				alimento :descripcion => "Huevo",
-					 :gramos => 20
-			end
+			#@platos = Plato.new("Hamburguesa")do
+			#	nombre "Hamburguesa especial de la casa"
+			#	alimento :descripcion => "Carne de Vaca",
+			#		 :gramos => 100
+					 
+			#	alimento :descripcion => "Huevo",
+			#		 :gramos => 20
+			#end
 			
-			menu = Menu.new("Combinado nº 1") do
+			@menu = Alimentos::Menu.new("Combinado nº 1") do
 				descripcion "Hamburguesa,papas,refreso"
 				componente :descripcion => "Hamburguesa especial",
-					   :precio => 4.25
+					   :precio => 4.25,
+				   	   :gramos => 100,
+					   :lipidos => 3.1,
+					   :carbohidratos => 0.0,
+					   :proteinas => 21.0,
+					   :c02  => 50.0,
+					   :m2 => 164.0
+					 
 				componente :descripcion => "Papas pequeñas",
-					   :precio => 1.75
+					   :precio => 1.75,
+					   :gramos => 30,
+					   :lipidos => 3.1,
+					   :carbohidratos => 0.0,
+					   :proteinas => 21.0,
+					   :c02  => 50.0,
+					   :m2 => 164.0
 				componente :descripcion => "Refresco de lata" ,
-					   :precio => 1.50
+					   :precio => 1.50,
+					   :gramos => 110,
+					   :lipidos => 3.1,
+					   :carbohidratos => 0.0,
+					   :proteinas => 21.0,
+					   :c02  => 50.0,
+					   :m2 => 164.0
 				precio	7.50
 			end
 		end
-
-
+		
+	 	it "Prueba obtiene la clase menu " do
+		expect (@menu.class).to eq(Alimentos::Menu)
+		
+		end
 
 
 
