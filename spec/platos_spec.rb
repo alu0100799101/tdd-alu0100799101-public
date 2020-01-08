@@ -187,7 +187,7 @@ RSpec.describe Alimentos::PlatosN do
 		
 		end
 
-		it "Prueba to_s " do
+		it "Prueba to_s menu " do
 		expect(@menu.to_s) == ("Combinado nº 1
        +==============
        +
@@ -219,6 +219,11 @@ RSpec.describe Alimentos::PlatosN do
        + C02:50.0
        + M2:164.0 
        + Precio:[7.5] ")
+		end
+		
+		it " Prueba to_s plato " do
+
+		expect(@plato.to_s).to eq("Hamburguesa\n===========\n\nNombre: Hamburguesa especial de la casa\n\n\n Descripcion:Carne de Vaca\n Gramos:100\n Descripcion:Huevo\n Gramos:20")
 		end
 
 
