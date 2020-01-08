@@ -2,7 +2,7 @@
 #Asignatura LPP
 # Alumno : Adrián Tomás Herrera Darias
 # Practica 10 : DSL
-require 'spec_helper'
+
 
 module Alimentos
 	class Menu

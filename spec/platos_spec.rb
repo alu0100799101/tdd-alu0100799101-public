@@ -142,14 +142,14 @@ RSpec.describe Alimentos::PlatosN do
 	describe ' Pruebas DSL' do 
 		before :all do
 		
-			#@platos = Plato.new("Hamburguesa")do
-			#	nombre "Hamburguesa especial de la casa"
-			#	alimento :descripcion => "Carne de Vaca",
-			#		 :gramos => 100
+			@plato = Alimentos::Plato.new("Hamburguesa")do
+				nombre "Hamburguesa especial de la casa"
+				alimento :descripcion => "Carne de Vaca",
+					 :gramos => 100
 					 
-			#	alimento :descripcion => "Huevo",
-			#		 :gramos => 20
-			#end
+				alimento :descripcion => "Huevo",
+					 :gramos => 20
+			end
 			
 			@menu = Alimentos::Menu.new("Combinado nº 1") do
 				descripcion "Hamburguesa,papas,refreso"

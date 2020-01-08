@@ -1,5 +1,5 @@
 #DSL CLASS
-Module Alimentos
+module Alimentos
 	class Plato
 		attr_accessor :titulo,:nombre,:alimento
 
@@ -15,6 +15,15 @@ Module Alimentos
 		      end
 		    end
   	    end
-	    
+		def nombre(titulo,options = {})
+			  nombre = titulo
+			  @nombre << nombre
+		end
+	    	def alimento(titulo,options ={})
+		alimento = titulo
+			alimento << " (#{options[:descripcion]})" if options[:descripcion]
+			    alimento << " (#{options[:gramos]})" if options[:gramos]
+			@alimento << alimento 
+		end
 	end
 end
