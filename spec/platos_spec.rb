@@ -183,11 +183,43 @@ RSpec.describe Alimentos::PlatosN do
 		end
 		
 	 	it "Prueba obtiene la clase menu " do
-		expect (@menu.class).to eq(Alimentos::Menu)
+		expect(@menu.class).to eq(Alimentos::Menu)
 		
 		end
 
-
+		it "Prueba to_s " do
+		expect(@menu.to_s) == ("Combinado nº 1
+       +==============
+       +
+       +descripcion: Hamburguesa,papas,refreso
+       +
+       +
+       + Descripcion:Hamburguesa especial
+       + Precio:4.25
+       + Gramos:100
+       + Lipidos:3.1
+       + Carbohidratos0.0
+       + Proteinas:21.0
+       + C02:50.0
+       + M2:164.0
+       + Descripcion:Papas pequeñas
+       + Precio:1.75
+       + Gramos:30
+       + Lipidos:3.1
+       + Carbohidratos0.0
+       + Proteinas:21.0
+       + C02:50.0
+       + M2:164.0
+       + Descripcion:Refresco de lata
+       + Precio:1.5
+       + Gramos:110
+       + Lipidos:3.1
+       + Carbohidratos0.0
+       + Proteinas:21.0
+       + C02:50.0
+       + M2:164.0 
+       + Precio:[7.5] ")
+		end
 
 
 
